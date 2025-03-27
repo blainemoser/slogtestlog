@@ -22,6 +22,13 @@ type (
 	}
 )
 
+func New() *TestLog {
+	return &TestLog{
+		mu:       sync.Mutex{},
+		messages: make([]string, 0),
+	}
+}
+
 func (h *TestLog) Enabled(_ context.Context, level slog.Level) bool {
 	switch level {
 	case slog.LevelDebug:
