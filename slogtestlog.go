@@ -85,3 +85,14 @@ func (h *TestLog) Handle(context context.Context, record slog.Record) error {
 	}
 	return nil
 }
+
+// I have no idea what these functions are supposed to do 
+// But conforming to interfaces is required here. 
+// Someone smarter might be able to tell me. 
+func (h *TestLog) WithAttrs(attrs []slog.Attr) slog.Handler {
+	panic("unimplemented")
+}
+
+func (h *TestLog) WithGroup(name string) slog.Handler {
+	panic("unimplemented")
+}
